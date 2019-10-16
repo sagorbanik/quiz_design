@@ -9,7 +9,9 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
+    <link rel="stylesheet" href="style.css">
+
+    <title>Question Title</title>
 </head>
 
 <body>
@@ -35,10 +37,11 @@
     <div class="container">
         <div class="row">
             <div class="col-xl-12 text-center">
-                <h1>Question Title</h1>
+                <h1>Question Title</h1>    <span>Remaing Time:<span id="time"></span></span>
+
             </div>
             <div class="col-xl-12">
-                <form action="">
+                <form action="" class="form-control">
                     <!--Question 1-->
                     <div class="row">
                         <div class="col-xl-12 mt-2">
@@ -46,23 +49,66 @@
                         </div>
                         <div class="col-xl-12">
                             <div class="container ml-4">
-                                <div class="row">
-                                    <div class="col-xl-6 form-control">
-                                        <input class="form-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-                                        <label class="form-label" for="exampleRadios">Default radio</label>
-                                    </div>
-                                    <div class="col-xl-6 form-control">
-                                        <input class="form-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-                                        <label class="form-check-label" for="exampleRadios">Default radio</label>
-                                    </div>
-
+                                <div class="col-xl-12 form-control">
+                                    <label class="container">One
+                                        <input type="radio" name="q1Option">
+                                        <span class="checkmark"></span>
+                                    </label>
                                 </div>
-                                <div class="row">
-                                    
+                                <div class="col-xl-12 form-control">
+                                    <label class="container">One
+                                        <input type="radio" name="q1Option">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                                <div class="col-xl-12 form-control">
+                                    <label class="container">One
+                                        <input type="radio" name="q1Option">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                                <div class="col-xl-12 form-control">
+                                    <label class="container">One
+                                        <input type="radio" name="q1Option">
+                                        <span class="checkmark"></span>
+                                    </label>
                                 </div>
                             </div>
                         </div>
-
+                    </div>
+                    <!--Question 1-->
+                    <div class="row">
+                        <div class="col-xl-12 mt-2">
+                            <p><strong><span>2.&nbsp;</span>Lorem Ipsum is simply dummy text of the printing and typesetting industry?</strong></p>
+                        </div>
+                        <div class="col-xl-12">
+                            <div class="container ml-4">
+                                <div class="col-xl-12 form-control">
+                                    <label class="container">One
+                                        <input type="radio" name="q2Option">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                                <div class="col-xl-12 form-control">
+                                    <label class="container">One
+                                        <input type="radio" name="q2Option">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                                <div class="col-xl-12 form-control">
+                                    <label class="container">One
+                                        <input type="radio" name="q2Option">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                                <div class="col-xl-12 form-control">
+                                    <label class="container">One
+                                        <input type="radio" name="q2Option">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </form>
             </div>
@@ -73,6 +119,30 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-</body>
+    <script>
+        function startTimer(duration, display) {
+            var timer = duration,
+                minutes, seconds;
+            setInterval(function() {
+                minutes = parseInt(timer / 60, 10);
+                seconds = parseInt(timer % 60, 10);
 
-</html>
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                display.textContent = minutes + ":" + seconds;
+
+                if (--timer < 0) {
+                    alert('fff');
+                }
+            }, 1000);
+        }
+
+        window.onload = function() {
+            var fiveMinutes = 60 * .1,
+                display = document.querySelector('#time');
+                startTimer(fiveMinutes, display);
+                
+        };
+    </script>
+</body></html>
